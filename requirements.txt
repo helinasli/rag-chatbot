@@ -1,0 +1,17 @@
+# Web Framework
+streamlit>=1.28.0
+
+# RAG ve NLP Kütüphaneleri
+chromadb>=0.4.18
+sentence-transformers>=2.2.2
+google-generativeai>=0.3.0
+
+# Veri İşleme
+pandas>=2.1.0
+numpy>=1.24.0
+
+# Yardımcı Kütüphaneler
+python-dotenv>=1.0.0
+
+# Opsiyonel - Hugging Face datasets kullanımı için
+datasets>=2.14.0
