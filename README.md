@@ -146,9 +146,9 @@ python src/rag_system.py
 ## 🌐 Web Arayüzü ve Kullanım Kılavuzu
 
 ### Deployment Link
-🔗 **Deployment yapıldıktan sonra link buraya eklenecektir.**
+🔗 **[RAG Chatbot - Live Demo](https://rag-chatbot-genai-akbank.streamlit.app/)**
 
-> **Not:** Projeyi deploy etmek için `streamlit run app.py` komutuyla lokal olarak çalıştırabilir veya [Streamlit Cloud](https://streamlit.io/cloud), [Hugging Face Spaces](https://huggingface.co/spaces) ya da [Render](https://render.com) gibi platformları kullanabilirsiniz.
+> **Not:** Uygulama Streamlit Cloud'da host edilmektedir. İlk açılışta birkaç saniye yükleme süresi olabilir.
 
 ### Arayüz Özellikleri
 
