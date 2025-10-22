@@ -16,6 +16,7 @@ venv.bak/
 .env
 .env.local
 .env.*.local
+.streamlit/secrets.toml
 
 # ChromaDB / Vector Database
 chroma_db/

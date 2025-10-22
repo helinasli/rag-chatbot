@@ -117,16 +117,26 @@ def main():
         
         # API Key durumu (sadece gerektiğinde göster)
         load_dotenv()
-        existing_api_key = os.getenv("GEMINI_API_KEY")
+        
+        # Streamlit secrets'tan veya .env'den API key al
+        existing_api_key = None
+        if hasattr(st, 'secrets') and 'GEMINI_API_KEY' in st.secrets:
+            existing_api_key = st.secrets["GEMINI_API_KEY"]
+            os.environ["GEMINI_API_KEY"] = existing_api_key
+        else:
+            existing_api_key = os.getenv("GEMINI_API_KEY")
         
         if not existing_api_key or existing_api_key == "your_gemini_api_key_here":
-            st.markdown("### API Konfigürasyonu")
-            st.warning(".env dosyasında geçerli API key bulunamadı")
-            api_key = st.text_input("Gemini API Key", type="password", help="Google AI Studio'dan alabilirsiniz")
+            st.markdown("### ⚙️ API Konfigürasyonu")
+            st.warning("⚠️ Gemini API key bulunamadı")
+            st.info("💡 Lokal kullanım için .env dosyasına ekleyin veya aşağıya girin")
+            api_key = st.text_input("Gemini API Key", type="password", help="Google AI Studio'dan alabilirsiniz: https://ai.google.dev/")
             
             if api_key:
                 os.environ["GEMINI_API_KEY"] = api_key
-                st.success("API Key ayarlandı!")
+                st.success("✅ API Key ayarlandı!")
+        else:
+            st.sidebar.success("✅ API Key aktif")
         
         # Veri yükleme seçenekleri
         st.markdown("### Veri Yükleme")
